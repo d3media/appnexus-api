@@ -1,3 +1,21 @@
+---
 language: node_js
 node_js:
-  - "0.10"
+- '0.10'
+env:
+  global:
+  - secure: ! 'Ideibi2dP2xDAFtNzcoeRpzS3FBw5S9pgQ+c/0sSoTA28H+GWtepzAhmHONy
+
+      O5ss41Rt16/fzKESQErpmce/oMONq8dKVe3V89mi/MxsfwoIX4p8oM3Rrnkz
+
+      pXhN89fN7p4RaY7by2sEHuJQH0EwrVRfCoMC2qLK6l5MzS2e/SI='
+  - secure: ! 'HPDhkPbUowVwBVNw2ek2QwBqOEE7bQQR/nKRxSZ06+f37X6jT/78MufwnJn7
+
+      c2uryjihfJ38M4kQLcyr/vPgdmZT7F8CIm45VpM8b6d9nE7xEsWCF/NuwuMB
+
+      THyKE0umscdG6UGGGeKOM2PTj1Mu4QdZlChO4O5GaRXIR63iM2c='
+  - secure: ! 'XZkGvAaUyuKBRLKpVoElT05NGGDrA6LoheaWyuWpijNT6LddFEq70VxaUaHh
+
+      8lBhap6yFFqcoBxwb9BrCRXYzFiSoJfdg8ezxzBnUZ6ECp2ZXneqRhd5KPjL
+
+      w9bWaFPNXRbWt5j74JNrBMD+YyiQ6iyjz+eJrGBNFccp1tky4Q8='
