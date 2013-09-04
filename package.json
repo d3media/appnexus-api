@@ -4,7 +4,8 @@
     "description": "Appnexus client for node.js",
     "main": "index.js",
     "scripts": {
-        "test": "./node_modules/.bin/mocha"
+        "test": "make test --no-print-directory --quiet",
+        "coverage": "make test-cov --no-print-directory --quiet"
     },
     "keywords": ["appnexus"],
     "author": "d3media AG",
