@@ -17,7 +17,8 @@
     "istanbul": "~0.1.43",
     "mocha-istanbul": "~0.2.0",
     "express": "~3.3.8",
-    "node-uuid": "~1.4.1"
+    "node-uuid": "~1.4.1",
+    "debug": "~0.7.2"
   },
   "dependencies": {
     "request": "~2.27.0"

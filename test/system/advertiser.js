@@ -1,5 +1,6 @@
 var assert = require('assert'),
     uuid = require('node-uuid').v4,
+    debug = require('debug')('test:advertiser'),
     client = require('./support/client-instance');
 describe('Advertiser', function () {
     var advertiser = {
@@ -9,13 +10,16 @@ describe('Advertiser', function () {
         if (client.token) {
             return done();
         }
-        console.error('client was not authenticated... authenticating');
+        debug('authenticating client');
+        client.once('authenticationSucceed', function () {
+            debug('authenticationSucceed');
+            done();
+        });
         client.authenticate(function (err, token) {
             if (err) {
                 throw err;
             }
             client.token = token;
-            done();
         });
     });
     beforeEach(function (done) {

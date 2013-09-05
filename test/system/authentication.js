@@ -28,19 +28,19 @@ describe('Authentication', function () {
             assert(authenticationSucceedTriggered);
         });
     });
-    describe.skip('Appnexus on NOAUTH', function () {
+    describe('Appnexus on NOAUTH', function () {
         describe('If appnexus does not accept our token', function () {
-            var NOAUTHtriggered = false;
-            before(function (done) {
+            it('should trigger the *NOAUTH* event', function (done) {
+                var client = appnexus.create({
+                    username: 'p.revington',
+                    password: 'novalidpassword',
+                    endpoint: process.env.APPNEXUS_ENDPOINT
+                }),
+                    noop = function () {};
                 client.on('NOAUTH', function (token) {
-                    NOAUTHtriggered = true;
-                    NOAUTHToken = token;
                     done();
                 });
-                client.member();
-            });
-            it('should trigger the *NOAUTH* event', function (done) {
-                assert(NOAUTHtriggered);
+                client.readMember(noop);
             });
         });
     });
