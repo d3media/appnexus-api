@@ -29,3 +29,4 @@ or
 
 	$ make test-system
 
+System tests are instrumentalised using the excellent [debug](https://github.com/visionmedia/debug) library.  
