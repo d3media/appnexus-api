@@ -1,2 +1,6 @@
 .DS_Store
 node_modules
+coverage-final.json
+env.sh
+html-report
+lib-cov

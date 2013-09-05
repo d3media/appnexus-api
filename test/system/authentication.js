@@ -1,31 +1,31 @@
 var assert = require('assert'),
-    appnexus = require('..');
+    appnexus = require('../..');
 describe('Authentication', function () {
     describe('#authenticate()', function () {
-        var client;
-        beforeEach(function () {
+        var client, authToken, authenticationSucceedTriggered;
+        before(function (done) {
             client = appnexus.create({
                 username: process.env.APPNEXUS_USERNAME,
                 password: process.env.APPNEXUS_PASSWORD,
                 endpoint: process.env.APPNEXUS_ENDPOINT
             });
-        });
-        it('should return an authentication token', function (done) {
+            client.on('authenticationSucceed', function (token) {
+                authenticationSucceedTriggered = true;
+                done();
+            });
             client.authenticate(function (err, token) {
                 if (err) {
                     console.error(err);
                     throw err;
                 }
-                assert(token);
-                done();
+                authToken = token;
             });
         });
-        it('should trigger *authenticationSucceed* on success', function (done) {
-            client.on('authenticationSucceed', function (token) {
-                assert(token);
-                done();
-            });
-            client.authenticate();
+        it('should return an authentication token', function () {
+            assert(authToken);
+        });
+        it('should trigger *authenticationSucceed* on success', function () {
+            assert(authenticationSucceedTriggered);
         });
     });
     describe.skip('Appnexus on NOAUTH', function () {
