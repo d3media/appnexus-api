@@ -3,6 +3,10 @@
 
 > appnexus-api is an easy-to-use Appnexus client for node.
 
+## Install
+
+	$ npm install appnexus-api
+
 ## Usage 
 
 See [system tests](test/system).
