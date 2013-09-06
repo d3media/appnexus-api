@@ -18,10 +18,10 @@ describe('Member', function () {
             client.token = token;
         });
     });
-    describe('#readMember(callback)', function () {
+    describe('#get("member", callback)', function () {
         // https://wiki.appnexus.com/display/api/Member+Service
         it('should return MY member', function (done) {
-            client.readMember(function (err, member) {
+            client.get('member', function (err, member) {
                 if (err) {
                     throw err;
                 }

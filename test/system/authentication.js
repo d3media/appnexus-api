@@ -40,7 +40,7 @@ describe('Authentication', function () {
                 client.on('NOAUTH', function (token) {
                     done();
                 });
-                client.readMember(noop);
+                client.get('member', noop);
             });
         });
     });

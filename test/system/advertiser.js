@@ -28,7 +28,7 @@ describe('Advertiser', function () {
             that.advertiserCreatedTriggered = true;
             done();
         });
-        client.createAdvertiser(advertiser, function (err, newAdvertiser) {
+        client.create('advertiser', advertiser, function (err, newAdvertiser) {
             if (err) {
                 console.error(err);
                 throw err;
@@ -41,7 +41,7 @@ describe('Advertiser', function () {
             return done();
         }
         var id = this.advertiserCreatedID;
-        client.deleteAdvertiser(id, function (err) {
+        client.destroy('advertiser',id, function (err) {
             if (err) {
                 console.error(err);
                 console.trace(err.stack);
@@ -50,7 +50,7 @@ describe('Advertiser', function () {
             done();
         });
     });
-    describe('#createAdvertiser(advertiser, [callback])', function () {
+    describe('#create("advertiser", advertiser, [callback])', function () {
         it('should create a new advertiser', function () {
             assert(this.advertiserCreatedID);
         });
@@ -58,35 +58,35 @@ describe('Advertiser', function () {
             assert(this.advertiserCreatedTriggered);
         });
     });
-    describe('#updateAdvertiser(id, update, [callback])', function () {
+    describe('#update("advertiser", id, update, [callback])', function () {
         it('should update an existing advertiser', function (done) {
             var id = this.advertiserCreatedID;
-            client.updateAdvertiser(id, {
+            client.update('advertiser',id, {
                 name: 'torcuato'
             }, function (err, updatedId) {
                 if (err) {
                     throw err;
                 }
                 assert(updatedId);
-                client.readAdvertiser(id, function (err, updatedAdvertiser) {
+                client.get('advertiser',id, function (err, updatedAdvertiser) {
                     assert.equal(updatedAdvertiser.name, 'torcuato');
                     done();
                 });
             });
         });
     });
-    describe('#readAdvertiser([id, callback])', function () {
+    describe('#get("advertiser", id, callback)', function () {
         it('should return the advertiser', function (done) {
-            client.readAdvertiser(this.advertiserCreatedID, function (err, actual) {
+            client.get('advertiser',this.advertiserCreatedID, function (err, actual) {
                 assert.deepEqual(actual.name, advertiser.name);
                 done();
             });
         });
     });
-    describe('#deleteAdvertiser(id, [callback])', function () {
+    describe('#destroy("advertiser", id, callback)', function () {
         it('should delete the advertiser', function (done) {
             var that = this;
-            client.deleteAdvertiser(this.advertiserCreatedID, function (err) {
+            client.destroy("advertiser", this.advertiserCreatedID, function (err) {
                 if (err) {
                     console.error(err);
                     console.trace(err.stack);
