@@ -28,12 +28,12 @@ describe('Advertiser', function () {
             that.advertiserCreatedTriggered = true;
             done();
         });
-        client.createAdvertiser(advertiser, function (err, id) {
+        client.createAdvertiser(advertiser, function (err, newAdvertiser) {
             if (err) {
                 console.error(err);
                 throw err;
             }
-            that.advertiserCreatedID = id;
+            that.advertiserCreatedID = newAdvertiser.id;
         });
     });
     afterEach(function (done) {
