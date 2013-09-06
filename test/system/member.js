@@ -1,7 +1,7 @@
 var assert = require('assert'),
     debug = require('debug')('test:member'),
     client = require('./support/client-instance');
-describe('Advertiser', function () {
+describe('Member', function () {
     before(function (done) {
         if (client.token) {
             return done();
