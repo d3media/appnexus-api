@@ -1,4 +1,4 @@
-var appnexus = require('../../../');
+var appnexus = require('../../../'),
 client = appnexus.create({
     username: process.env.APPNEXUS_USERNAME,
     password: process.env.APPNEXUS_PASSWORD,
