@@ -21,7 +21,8 @@
     "debug": "~0.7.2"
   },
   "dependencies": {
-    "request": "~2.27.0"
+    "request": "~2.27.0",
+    "debug": "~0.7.2"
   },
   "directories": {
     "test": "test"
