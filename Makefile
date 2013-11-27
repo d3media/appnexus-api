@@ -6,9 +6,9 @@ test-unit:
 	@NODE_ENV=test $(BIN)/mocha \
 		--reporter $(REPORTER) 
 clean-coverage:
-	-rm -rf lib-cov
-	-rm -rf html-report
-	-rm coverage-final.json 
+	@rm -rf lib-cov
+	@rm -rf html-report
+	@rm -rf coverage-final.json 
 
 lib-cov: clean-coverage
 	$(BIN)/istanbul instrument lib --output lib-cov --no-compact
