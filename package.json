@@ -22,7 +22,8 @@
   },
   "dependencies": {
     "request": "~2.27.0",
-    "debug": "~0.7.2"
+    "debug": "~0.7.2",
+    "limiter": "~1.0.4"
   },
   "directories": {
     "test": "test"
