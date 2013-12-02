@@ -71,3 +71,7 @@ or
 	$ make test-system
 
 System tests are instrumentalised using the excellent [debug](https://github.com/visionmedia/debug) library.  
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/d3media/appnexus-api/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
